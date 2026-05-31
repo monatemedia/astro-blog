@@ -1,8 +1,10 @@
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 
 const blogCollection = defineCollection({
-    type: "content",
+    // We point base directly to the folder containing your .md files
+    loader: glob({ pattern: "*.md", base: "./src/content/blog" }),
     schema: z.object({
         title: z.string(),
         pubDate: z.date(),
