@@ -1,1 +1,4 @@
 @import "tailwindcss";
+
+/* Tell Tailwind v4 where your template files live */
+@source "../**/*.astro";
